@@ -1,0 +1,115 @@
+ADOPSI
+
+Dari template pertama ke production dalam 4 minggu · From first template to production in 4 weeks
+
+◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆
+
+AUDIT ADOPSI-2026-001
+
+The Ledger · Tim Template Nusantara
+
+Minggu 1 · 23–27 Nov 2026
+
+Bab 02 dari 7 · Chapter 02 of 7
+
+Minggu Pertama / First Week
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+2 / 7
+
+MINGGU PERTAMA: DARI 30 KE 55 / FIRST WEEK: FROM 30 TO 55
+
+Halo, {{first_name}} — minggu ini kita tidak membahas teori. Lima hari, 12 jam kerja, satu fase selesai: template yang tadinya cuma satu Email menjadi multi-root. / Hello, {{first_name}} — this week we skip the theory. Five days, 12 hours of work, one phase done: the template that used to be a single Email becomes multi-root.
+
+Fase 1 — Multi-root / Multi-root · Minggu 1 · 23–27 Nov 2026 · 12 jam / hours · Skor 30 → 55
+
+HARI DEMI HARI / DAY BY DAY
+
+Senin, 23 Nov · Monday, 23 Nov
+
+Setup — install, jalankan check pertama, baca audit ini bersama tim
+
+Setup — install, run the first check, read this audit together
+
+Hasil / Result: Check berjalan; tim paham skor 30 dan 4 temuan / Check runs; the team understands the 30 score and 4 findings
+
+---
+
+Selasa, 24 Nov · Tuesday, 24 Nov
+
+Render template pertama — root Email, lihat HTML hasilnya
+
+Render the first template — the Email root, look at the HTML
+
+Hasil / Result: Satu email ter-render dari data yang sama / One email rendered from the same data
+
+---
+
+Rabu, 25 Nov · Wednesday, 25 Nov
+
+defineTheme — satu tema untuk semua root, tanpa warna per elemen
+
+defineTheme — one theme for all roots, no per-element colours
+
+Hasil / Result: Tema tunggal dipakai Email dan Page / A single theme used by Email and Page
+
+---
+
+Kamis, 26 Nov · Thursday, 26 Nov
+
+validate() + email-clients — gate sebelum render, bukti per klien
+
+validate() + email-clients — gate before rendering, proof per client
+
+Hasil / Result: Gate menolak template yang rusak sebelum render / The gate rejects a broken template before rendering
+
+---
+
+Jumat, 27 Nov · Friday, 27 Nov
+
+Render semua output + review bersama — skor naik ke 55
+
+Render every output + team review — score rises to 55
+
+Hasil / Result: Fase 1 selesai; 3 root baru hidup / Phase 1 done; 3 new roots live
+
+YANG PERLU DISIAPKAN / WHAT TO BRING
+
+Satu repo (ferdiakhmadirawan44/weekly-crypto-portfolio-digest), satu terminal, dan audit ini — skor 30/100 ada di semua output kit, jadi tidak ada yang bisa salah paham soal posisi kita sekarang. / One repo (ferdiakhmadirawan44/weekly-crypto-portfolio-digest), one terminal, and this audit — the 30/100 score is on every output in the kit, so nobody can misunderstand where we stand.
+
+Aturan main / Ground rule: tidak ada angka yang diketik tangan di template — skor, coverage dan effort selalu dihitung dari file audit. Kalau angkanya berubah, semua output berubah. / Ground rule: no number is ever typed by hand in a template — score, coverage and effort are always computed from the audit file. If the number changes, every output changes.
+
+Buka roadmap lengkap / Open the full roadmap (https://example.com/adopsi)
+
+Satu audit, satu skor / One audit, one score
+
+AUDIT ADOPSI-2026-001 · The Ledger · Kamis, 20 November 2026
+
+Skor / Score 30/100 · Level: Memulai / Getting Started · Coverage migrasi / Migration coverage 84,0% · Effort 29 jam / hours
+
+One audit, one score — this audit ID and score are identical on the audit email, the onboarding email, the roadmap page, the migration guide, the certificate and both cards.
+
+◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆
+
+Hasil audit / Audit result (https://example.com/adopsi) · Roadmap adopsi / Adoption roadmap (https://example.com/adopsi) · Berhenti berlangganan / Unsubscribe (https://example.com/unsubscribe)
+
+Dikirim dari / Sent from adopsi@template-nusantara.id — satu alamat pengirim untuk kedua email kit ini / one sender address for both emails in this kit.
+
+---
+
+AUDIT NYATA / REAL AUDIT — The Ledger diaudit 20 November 2026 dari kode sumbernya (5 file, 679 baris, 22 primitif). Skor, level, coverage, temuan dan effort dihitung dari audit itu — bukan angka contoh. / The Ledger was audited on 20 November 2026 from its real source (5 files, 679 lines, 22 primitives). The score, level, coverage, findings and effort are computed from that audit — not sample numbers.
+
+ADOPSI · AUDIT ADOPSI-2026-001 · Audit template The Ledger, 20 November 2026 — diukur dari kode sumbernya

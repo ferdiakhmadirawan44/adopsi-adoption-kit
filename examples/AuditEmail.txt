@@ -1,0 +1,118 @@
+ADOPSI
+
+Dari template pertama ke production dalam 4 minggu · From first template to production in 4 weeks
+
+◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆
+
+AUDIT ADOPSI-2026-001
+
+The Ledger · Tim Template Nusantara
+
+Kamis, 20 November 2026 · Tim Template Nusantara
+
+Bab 01 dari 7 · Chapter 01 of 7
+
+Hasil Audit / Audit Result
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+1 / 7
+
+HASIL AUDIT: THE LEDGER / AUDIT RESULT: THE LEDGER
+
+Halo, {{first_name}} — audit The Ledger selesai. Template ini diaudit dari kode sumbernya sendiri (5 file, 679 baris, 22 primitif Hyper Elements), bukan dari tebakan. / Hello, {{first_name}} — the audit of The Ledger is done. This template was audited from its own source code (5 files, 679 lines, 22 Hyper Elements primitives), not from a guess.
+
+Repo yang diaudit / Audited repo: ferdiakhmadirawan44/weekly-crypto-portfolio-digest
+
+SKOR KESIAPAN / READINESS SCORE
+
+30/100
+
+Memulai · Getting Started
+
+2 dari / of 6 cek lolos / checks passed · 4 temuan / findings
+
+Skor kesiapan / Readiness score: 30/100
+
+Memulai / Getting Started
+
+0 = belum mulai / not started · 40 = Berkembang / Growing · 70 = Siap Produksi / Ready for Production · 90 = Production Ready
+
+Skor ini rendah — dan itu jujur. Template pertama memang begitu: satu Email, tanpa bukti klien, tanpa test, tanpa preview. Kabar baiknya: jalannya jelas — 4 fase, 29 jam, target 100 pada Jumat, 18 Desember 2026. / This score is low — and honest. A first template looks like this: one Email, no client proof, no tests, no preview. The good news: the path is clear — 4 phases, 29 hours, target 100 by Friday, 18 December 2026.
+
+ENAM CEK, DUA LOLOS / SIX CHECKS, TWO PASSED
+
+Setiap cek punya bobot dan bukti dari kode sumber — bukan penilaian. / Every check has a weight and evidence from the source code — not an opinion.
+
+Cek / Check | Bobot / Weight | Hasil / Result
+Multi-root / Multi-root — 1 root (Email); Page 0, Document 0, Canvas 0 — src/Digest.tsx | 25 | ✗ GAGAL / FAIL
+defineTheme / defineTheme — ledgerTheme via defineTheme — src/theme.ts | 15 | ✓ LOLOS / PASS
+Validate gate / Validate gate — validate() di src/render.tsx + plugin email-clients; gagal → exit 1 | 15 | ✓ LOLOS / PASS
+Bukti email-client / Email-client proof — Plugin jalan saat validate, tapi tidak ada file preview tersimpan (tanpa examples/) | 15 | ✗ GAGAL / FAIL
+Tests / Tests — Tidak ada file test, tidak ada script test di package.json | 15 | ✗ GAGAL / FAIL
+Live preview / Live preview — Tidak ada konfigurasi Vercel, tidak ada URL preview | 15 | ✗ GAGAL / FAIL
+Total | 100 | 30/100
+
+3 TEMUAN UTAMA / TOP 3 FINDINGS
+
+Diurutkan dari bobot terbesar — yang paling mahal kalau dibiarkan. / Ordered by weight — the most expensive to leave alone.
+
+Temuan 1 / Finding 1
+
+Bobot / Weight 25 · Fase / Phase 1
+
+Multi-root / Multi-root
+
+Aksi / Action: Tambah root Page, Document, dan Canvas; satu tema dipakai bersama / Add Page, Document and Canvas roots; share one theme
+
+Temuan 2 / Finding 2
+
+Bobot / Weight 15 · Fase / Phase 2
+
+Bukti email-client / Email-client proof
+
+Aksi / Action: Generate preview tiap klien email dan simpan sebagai bukti / Generate one preview per email client and save them as proof
+
+Temuan 3 / Finding 3
+
+Bobot / Weight 15 · Fase / Phase 3
+
+Tests / Tests
+
+Aksi / Action: Tulis unit test untuk semua fungsi hitung (skor, level, coverage) / Write unit tests for every computed function (score, level, coverage)
+
++ 1 temuan lagi / more finding(s) — detail lengkap di roadmap (Bab 03) / full detail in the roadmap (Chapter 03).
+
+Lihat roadmap 4 fase / See the 4-phase roadmap (https://example.com/adopsi)
+
+Satu audit, satu skor / One audit, one score
+
+AUDIT ADOPSI-2026-001 · The Ledger · Kamis, 20 November 2026
+
+Skor / Score 30/100 · Level: Memulai / Getting Started · Coverage migrasi / Migration coverage 84,0% · Effort 29 jam / hours
+
+One audit, one score — this audit ID and score are identical on the audit email, the onboarding email, the roadmap page, the migration guide, the certificate and both cards.
+
+◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆
+
+Roadmap adopsi / Adoption roadmap (https://example.com/adopsi) · Panduan migrasi / Migration guide (https://example.com/adopsi) · Berhenti berlangganan / Unsubscribe (https://example.com/unsubscribe)
+
+Dikirim dari / Sent from adopsi@template-nusantara.id — satu alamat pengirim untuk kedua email kit ini / one sender address for both emails in this kit. Anda menerima email ini karena Anda anggota Tim Template Nusantara. / You received this email because you are a member of the Nusantara Template Team.
+
+---
+
+AUDIT NYATA / REAL AUDIT — The Ledger diaudit 20 November 2026 dari kode sumbernya (5 file, 679 baris, 22 primitif). Skor, level, coverage, temuan dan effort dihitung dari audit itu — bukan angka contoh. / The Ledger was audited on 20 November 2026 from its real source (5 files, 679 lines, 22 primitives). The score, level, coverage, findings and effort are computed from that audit — not sample numbers.
+
+ADOPSI · AUDIT ADOPSI-2026-001 · Audit template The Ledger, 20 November 2026 — diukur dari kode sumbernya

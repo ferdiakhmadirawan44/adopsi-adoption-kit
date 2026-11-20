@@ -1,0 +1,605 @@
+{
+  "generatedAt": "2026-11-20T00:52:21.929Z",
+  "kit": "ADOPSI",
+  "auditId": "AUDIT ADOPSI-2026-001",
+  "clients": [
+    "outlook",
+    "outlook-com",
+    "gmail",
+    "gmail-app",
+    "apple-mail",
+    "yahoo",
+    "aol"
+  ],
+  "cli": {
+    "check": {
+      "errors": 0,
+      "warnings": 0,
+      "skipped": 0
+    },
+    "render": {
+      "errors": 0,
+      "warnings": 0,
+      "skipped": 0
+    },
+    "preview": {
+      "errors": 0,
+      "warnings": 0,
+      "skipped": 0
+    }
+  },
+  "validate": {
+    "AuditEmail": {
+      "valid": true,
+      "errors": 0,
+      "warnings": 0,
+      "notes": 33,
+      "diagnostics": [
+        {
+          "code": "email/degraded",
+          "severity": "info",
+          "message": "justifyContent: \"center\" on this Column in email: no effect: its children start at the top",
+          "path": "root.children[1].children[0].children[0].children[2].children[0].style.justifyContent"
+        },
+        {
+          "code": "email/degraded",
+          "severity": "info",
+          "message": "justifyContent: \"center\" on this Column in email: no effect: its children start at the top",
+          "path": "root.children[1].children[0].children[0].children[2].children[1].style.justifyContent"
+        },
+        {
+          "code": "email/degraded",
+          "severity": "info",
+          "message": "justifyContent: \"center\" on this Column in email: no effect: its children start at the top",
+          "path": "root.children[1].children[0].children[0].children[2].children[2].style.justifyContent"
+        },
+        {
+          "code": "email/degraded",
+          "severity": "info",
+          "message": "justifyContent: \"center\" on this Column in email: no effect: its children start at the top",
+          "path": "root.children[1].children[0].children[0].children[2].children[3].style.justifyContent"
+        },
+        {
+          "code": "email/degraded",
+          "severity": "info",
+          "message": "justifyContent: \"center\" on this Column in email: no effect: its children start at the top",
+          "path": "root.children[1].children[0].children[0].children[2].children[4].style.justifyContent"
+        },
+        {
+          "code": "email/degraded",
+          "severity": "info",
+          "message": "justifyContent: \"center\" on this Column in email: no effect: its children start at the top",
+          "path": "root.children[1].children[0].children[0].children[2].children[5].style.justifyContent"
+        },
+        {
+          "code": "email/degraded",
+          "severity": "info",
+          "message": "justifyContent: \"center\" on this Column in email: no effect: its children start at the top",
+          "path": "root.children[1].children[0].children[0].children[2].children[6].style.justifyContent"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[0].children[2].children[0].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[0].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[0].children[0].children[2].children[0].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[0].children[0].children[2].children[1].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[0].children[0].children[2].children[2].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[0].children[0].children[2].children[3].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[0].children[0].children[2].children[4].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[0].children[0].children[2].children[5].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[0].children[0].children[2].children[6].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[1].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[1].children[2].children[1].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[1].children[2].children[1].children[0].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[2].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[3].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[3].children[2].children[0].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[3].children[2].children[1].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[3].children[2].children[2].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Button in classic Outlook: square corners",
+          "path": "root.children[1].children[3].children[3].style.borderRadius"
+        },
+        {
+          "code": "email/degraded",
+          "severity": "info",
+          "message": "hover on this Button in some email clients: no change (where it shows, keyboard focus gets it too)",
+          "path": "root.children[1].children[3].children[3].hover"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[4].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "What it holds looks about 693px wide on one line, wider than its 600px (an estimate: text isn't measured yet): classic Outlook can't wrap it onto another line as other clients do, and draws it wider",
+          "path": "root.children[2].children[1]"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it",
+          "path": "root.children[0].children[0].children[0].children[0].style.letterSpacing"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it",
+          "path": "root.children[0].children[1].style.letterSpacing"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it",
+          "path": "root.children[1].children[0].children[0].children[0].style.letterSpacing"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "letterSpacing on this Heading in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it",
+          "path": "root.children[1].children[4].children[0].style.letterSpacing"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it",
+          "path": "root.children[2].children[0].style.letterSpacing"
+        }
+      ]
+    },
+    "OnboardingEmail": {
+      "valid": true,
+      "errors": 0,
+      "warnings": 0,
+      "notes": 32,
+      "diagnostics": [
+        {
+          "code": "email/degraded",
+          "severity": "info",
+          "message": "justifyContent: \"center\" on this Column in email: no effect: its children start at the top",
+          "path": "root.children[1].children[0].children[0].children[2].children[0].style.justifyContent"
+        },
+        {
+          "code": "email/degraded",
+          "severity": "info",
+          "message": "justifyContent: \"center\" on this Column in email: no effect: its children start at the top",
+          "path": "root.children[1].children[0].children[0].children[2].children[1].style.justifyContent"
+        },
+        {
+          "code": "email/degraded",
+          "severity": "info",
+          "message": "justifyContent: \"center\" on this Column in email: no effect: its children start at the top",
+          "path": "root.children[1].children[0].children[0].children[2].children[2].style.justifyContent"
+        },
+        {
+          "code": "email/degraded",
+          "severity": "info",
+          "message": "justifyContent: \"center\" on this Column in email: no effect: its children start at the top",
+          "path": "root.children[1].children[0].children[0].children[2].children[3].style.justifyContent"
+        },
+        {
+          "code": "email/degraded",
+          "severity": "info",
+          "message": "justifyContent: \"center\" on this Column in email: no effect: its children start at the top",
+          "path": "root.children[1].children[0].children[0].children[2].children[4].style.justifyContent"
+        },
+        {
+          "code": "email/degraded",
+          "severity": "info",
+          "message": "justifyContent: \"center\" on this Column in email: no effect: its children start at the top",
+          "path": "root.children[1].children[0].children[0].children[2].children[5].style.justifyContent"
+        },
+        {
+          "code": "email/degraded",
+          "severity": "info",
+          "message": "justifyContent: \"center\" on this Column in email: no effect: its children start at the top",
+          "path": "root.children[1].children[0].children[0].children[2].children[6].style.justifyContent"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[0].children[2].children[0].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[0].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[0].children[0].children[2].children[0].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[0].children[0].children[2].children[1].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[0].children[0].children[2].children[2].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[0].children[0].children[2].children[3].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[0].children[0].children[2].children[4].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[0].children[0].children[2].children[5].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[0].children[0].children[2].children[6].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[1].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[2].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Button in classic Outlook: square corners",
+          "path": "root.children[1].children[2].children[3].style.borderRadius"
+        },
+        {
+          "code": "email/degraded",
+          "severity": "info",
+          "message": "hover on this Button in some email clients: no change (where it shows, keyboard focus gets it too)",
+          "path": "root.children[1].children[2].children[3].hover"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "borderRadius on this Column in classic Outlook: square corners",
+          "path": "root.children[1].children[3].style.borderRadius"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "What it holds looks about 652px wide on one line, wider than its 600px (an estimate: text isn't measured yet): classic Outlook can't wrap it onto another line as other clients do, and draws it wider",
+          "path": "root.children[2].children[1]"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it",
+          "path": "root.children[0].children[0].children[0].children[0].style.letterSpacing"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it",
+          "path": "root.children[0].children[1].style.letterSpacing"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it",
+          "path": "root.children[1].children[0].children[0].children[0].style.letterSpacing"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it",
+          "path": "root.children[1].children[1].children[1].children[0].children[0].style.letterSpacing"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it",
+          "path": "root.children[1].children[1].children[2].children[1].children[0].style.letterSpacing"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it",
+          "path": "root.children[1].children[1].children[3].children[1].children[0].style.letterSpacing"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it",
+          "path": "root.children[1].children[1].children[4].children[1].children[0].style.letterSpacing"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it",
+          "path": "root.children[1].children[1].children[5].children[1].children[0].style.letterSpacing"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "letterSpacing on this Heading in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it",
+          "path": "root.children[1].children[3].children[0].style.letterSpacing"
+        },
+        {
+          "code": "email/outlook-degraded",
+          "severity": "info",
+          "message": "letterSpacing on this Text in classic Outlook: normal spacing: Word keeps letter spacing but doesn't draw it",
+          "path": "root.children[2].children[0].style.letterSpacing"
+        }
+      ]
+    },
+    "RoadmapPage": {
+      "valid": true,
+      "errors": 0,
+      "warnings": 0,
+      "notes": 0,
+      "diagnostics": []
+    },
+    "MigrationGuidePdf": {
+      "valid": true,
+      "errors": 0,
+      "warnings": 0,
+      "notes": 0,
+      "diagnostics": []
+    },
+    "CertificatePdf": {
+      "valid": true,
+      "errors": 0,
+      "warnings": 0,
+      "notes": 0,
+      "diagnostics": []
+    },
+    "CheatsheetCard": {
+      "valid": true,
+      "errors": 0,
+      "warnings": 0,
+      "notes": 0,
+      "diagnostics": []
+    },
+    "ShareCard": {
+      "valid": true,
+      "errors": 0,
+      "warnings": 0,
+      "notes": 0,
+      "diagnostics": []
+    }
+  },
+  "audit": {
+    "score": 30,
+    "level": {
+      "id": "Memulai",
+      "en": "Getting Started",
+      "min": 0,
+      "max": 39
+    },
+    "coverage": {
+      "mapped": 21,
+      "partial": 3,
+      "manual": 1,
+      "total": 25,
+      "pct": 84
+    },
+    "findings": 4,
+    "migrationEffortHours": 18,
+    "totalEffortHours": 29,
+    "trajectory": [
+      30,
+      55,
+      70,
+      85,
+      100
+    ]
+  },
+  "invariants": [
+    {
+      "name": "score-is-sum-of-passed-weights",
+      "passed": true,
+      "detail": "score 30 = 15 + 15"
+    },
+    {
+      "name": "weights-sum-to-100",
+      "passed": true,
+      "detail": "weights 25 + 15 + 15 + 15 + 15 + 15 = 100"
+    },
+    {
+      "name": "level-from-score",
+      "passed": true,
+      "detail": "score 30 -> Memulai / Getting Started"
+    },
+    {
+      "name": "trajectory-ends-at-100",
+      "passed": true,
+      "detail": "30 -> 55 -> 70 -> 85 -> 100"
+    },
+    {
+      "name": "trajectory-strictly-increasing",
+      "passed": true,
+      "detail": "30 -> 55 -> 70 -> 85 -> 100"
+    },
+    {
+      "name": "coverage-adds-up",
+      "passed": true,
+      "detail": "21 mapped + 3 partial + 1 manual = 25 rows"
+    },
+    {
+      "name": "coverage-pct-computed",
+      "passed": true,
+      "detail": "21/25 = 84%"
+    },
+    {
+      "name": "one-finding-per-failed-check",
+      "passed": true,
+      "detail": "4 findings for 4 failed checks"
+    },
+    {
+      "name": "one-phase-per-finding",
+      "passed": true,
+      "detail": "phases 1, 2, 3, 4"
+    },
+    {
+      "name": "migration-effort-computed",
+      "passed": true,
+      "detail": "18h from 25 rows"
+    },
+    {
+      "name": "total-effort-is-sum-of-phases",
+      "passed": true,
+      "detail": "29h = 12 + 4 + 9 + 4h"
+    },
+    {
+      "name": "week1-has-5-days",
+      "passed": true,
+      "detail": "5 days"
+    }
+  ],
+  "examples": {
+    "rendered": [
+      "examples/AuditEmail.html",
+      "examples/AuditEmail.txt",
+      "examples/CertificatePdf.pdf",
+      "examples/CheatsheetCard.png",
+      "examples/MigrationGuidePdf.pdf",
+      "examples/OnboardingEmail.html",
+      "examples/OnboardingEmail.txt",
+      "examples/RoadmapPage.html",
+      "examples/ShareCard.png"
+    ],
+    "clientPreviews": [
+      "examples/client-previews/src/AuditEmail/aol.html",
+      "examples/client-previews/src/AuditEmail/aol.mac.html",
+      "examples/client-previews/src/AuditEmail/apple-mail.html",
+      "examples/client-previews/src/AuditEmail/apple-mail.iphone.html",
+      "examples/client-previews/src/AuditEmail/gmail-app.html",
+      "examples/client-previews/src/AuditEmail/gmail-app.iphone.html",
+      "examples/client-previews/src/AuditEmail/gmail.html",
+      "examples/client-previews/src/AuditEmail/gmail.mac.html",
+      "examples/client-previews/src/AuditEmail/outlook-com.html",
+      "examples/client-previews/src/AuditEmail/outlook-com.mac.html",
+      "examples/client-previews/src/AuditEmail/outlook.html",
+      "examples/client-previews/src/AuditEmail/yahoo.html",
+      "examples/client-previews/src/AuditEmail/yahoo.mac.html",
+      "examples/client-previews/src/OnboardingEmail/aol.html",
+      "examples/client-previews/src/OnboardingEmail/aol.mac.html",
+      "examples/client-previews/src/OnboardingEmail/apple-mail.html",
+      "examples/client-previews/src/OnboardingEmail/apple-mail.iphone.html",
+      "examples/client-previews/src/OnboardingEmail/gmail-app.html",
+      "examples/client-previews/src/OnboardingEmail/gmail-app.iphone.html",
+      "examples/client-previews/src/OnboardingEmail/gmail.html",
+      "examples/client-previews/src/OnboardingEmail/gmail.mac.html",
+      "examples/client-previews/src/OnboardingEmail/outlook-com.html",
+      "examples/client-previews/src/OnboardingEmail/outlook-com.mac.html",
+      "examples/client-previews/src/OnboardingEmail/outlook.html",
+      "examples/client-previews/src/OnboardingEmail/yahoo.html",
+      "examples/client-previews/src/OnboardingEmail/yahoo.mac.html"
+    ]
+  },
+  "failures": [],
+  "passed": true
+}
