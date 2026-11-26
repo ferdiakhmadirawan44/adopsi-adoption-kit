@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADOPSI — Kalkulator Kesiapan Interaktif / Interactive Readiness Calculator</title>
+<style>
+  :root {
+    --navy: #12284B;
+    --navy-deep: #0E2444;
+    --gold: #C9A227;
+    --gold-bright: #E8B923;
+    --gold-dark: #8A6D00;
+    --parchment: #F6F1E7;
+    --card: #FFFFFF;
+    --ink: #1B2A3D;
+    --muted: #5A6B80;
+    --border: #D9DEE6;
+    --green: #2F7A44;
+    --green-tint: #E6F0E7;
+    --red: #C0392B;
+    --red-tint: #FDECEA;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  header {
+    background: var(--navy);
+    color: #FFFFFF;
+    padding: 32px 20px 24px;
+  }
+  header .wrap, main { max-width: 720px; margin: 0 auto; }
+  header h1 { margin: 0; font-size: 34px; letter-spacing: 3px; font-weight: 800; line-height: 1.15; }
+  header .tagline { color: var(--gold-bright); font-size: 14px; margin: 6px 0 0; }
+  .batik-band {
+    height: 18px;
+    margin: 16px 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='18'%3E%3Cpath d='M13 2 L22 9 L13 16 L4 9 Z' fill='%23C9A227'/%3E%3Ccircle cx='26' cy='9' r='2' fill='%23C9A227'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+  }
+  header .meta { font-size: 12px; font-family: "DejaVu Sans Mono", ui-monospace, Menlo, Consolas, monospace; opacity: 0.9; }
+  main { padding: 24px 20px 40px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  h2 { margin: 0 0 8px; font-size: 20px; line-height: 1.25; color: var(--navy); }
+  h3 { margin: 0 0 8px; font-size: 12px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--muted); }
+  p { margin: 0 0 12px; }
+  .kicker { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-dark); margin: 0 0 4px; }
+  .score-row { display: flex; gap: 20px; align-items: baseline; flex-wrap: wrap; }
+  .score-big { font-size: 64px; font-weight: 800; line-height: 1; color: var(--gold-dark); font-family: "DejaVu Sans Mono", ui-monospace, Menlo, Consolas, monospace; }
+  .score-big small { font-size: 24px; color: var(--muted); }
+  .score-level { font-size: 20px; font-weight: 800; color: var(--navy); }
+  .stat-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; }
+  .stat { flex: 1 1 140px; background: var(--parchment); border-radius: 12px; padding: 12px 14px; }
+  .stat .v { font-size: 22px; font-weight: 800; color: var(--navy); font-family: "DejaVu Sans Mono", ui-monospace, Menlo, Consolas, monospace; }
+  .stat .l { font-size: 12px; color: var(--muted); }
+  fieldset { border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin: 0 0 16px; }
+  legend { font-weight: 800; color: var(--navy); padding: 0 8px; }
+  .toggle-row { display: flex; gap: 10px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid #EEF0F3; cursor: pointer; }
+  .toggle-row:last-child { border-bottom: none; }
+  .toggle-row input { margin-top: 4px; width: 18px; height: 18px; accent-color: var(--navy); flex-shrink: 0; }
+  .toggle-row span { flex: 1; }
+  .toggle-row .sub { display: block; font-size: 13px; color: var(--muted); }
+  .derived { padding: 10px 0; border-bottom: 1px solid #EEF0F3; }
+  .derived:last-child { border-bottom: none; }
+  .btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+  button {
+    border: none; border-radius: 999px; padding: 10px 18px;
+    background: var(--navy); color: #FFFFFF; font-size: 14px; font-weight: 700; cursor: pointer;
+  }
+  button.secondary { background: #FFFFFF; color: var(--navy); border: 1px solid var(--navy); }
+  input[type="range"] { width: 100%; accent-color: var(--navy); }
+  ol { margin: 0; padding-left: 22px; }
+  ol li { margin-bottom: 10px; }
+  .traj { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+  .traj-chip { flex: 1 1 90px; border: 1px solid var(--border); border-radius: 12px; padding: 10px; min-width: 90px; }
+  .traj-chip.active { border-color: var(--gold); background: #FBF3D5; }
+  .traj-label { font-size: 11px; color: var(--muted); }
+  .traj-value { font-size: 24px; font-weight: 800; color: var(--navy); font-family: "DejaVu Sans Mono", ui-monospace, Menlo, Consolas, monospace; }
+  .traj-bar { height: 6px; background: var(--gold); border-radius: 3px; margin-top: 6px; max-width: 100%; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid #EEF0F3; vertical-align: top; }
+  th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+  footer { font-size: 13px; color: var(--muted); }
+  .pass { color: var(--green); font-weight: 700; }
+  .fail { color: var(--red); font-weight: 700; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>ADOPSI</h1>
+    <p class="tagline">Dari template pertama ke production dalam 4 minggu · From first template to production in 4 weeks</p>
+    <div class="batik-band" role="img" aria-label="Batik kawung band"></div>
+    <p class="meta" id="demo-project">—</p>
+    <p class="meta" id="demo-date">—</p>
+  </div>
+</header>
+<main>
+  <div class="card">
+    <p class="kicker">Kalkulator interaktif · Interactive calculator</p>
+    <h2>Kalkulator Kesiapan / Readiness Calculator</h2>
+    <p>Ubah audit di bawah ini, dan semua angka di halaman ini menghitung ulang seketika — skor, level, temuan, lintasan, effort, coverage — semuanya dihitung oleh mesin kit ini, bukan angka yang diketik tangan. / Change the audit below and every number on this page recalculates instantly — score, level, findings, trajectory, effort, coverage — all computed by this kit's engine, never typed by hand.</p>
+    <div class="btn-row">
+      <button id="preset-ledger" type="button">Audit 1 — The Ledger (20 Nov 2026)</button>
+      <button id="preset-tagihan" type="button">Audit 2 — TAGIHAN (26 Nov 2026)</button>
+      <button id="reset" type="button" class="secondary">Reset ke audit asli / Reset to the audited state</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="kicker">Hasil langsung / Live result</p>
+    <div class="score-row">
+      <div class="score-big"><span id="score-value">—</span><small>/100</small></div>
+      <div class="score-level" id="score-level">—</div>
+    </div>
+    <p id="score-note">—</p>
+    <div class="stat-grid">
+      <div class="stat"><div class="v" id="coverage-value">—</div><div class="l">Coverage migrasi / Migration coverage</div><div class="l" id="coverage-detail">—</div></div>
+      <div class="stat"><div class="v" id="migration-effort">—</div><div class="l">Effort migrasi / Migration effort</div></div>
+      <div class="stat"><div class="v" id="total-effort">—</div><div class="l">Total effort roadmap / Roadmap total effort</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Root yang sudah ada / Roots present</h3>
+    <label class="toggle-row"><input type="checkbox" id="root-email"><span>Root Email <span class="sub">Email root — ada di template? / present in the template?</span></span></label>
+    <label class="toggle-row"><input type="checkbox" id="root-page"><span>Root Page <span class="sub">Page root — ada di template? / present in the template?</span></span></label>
+    <label class="toggle-row"><input type="checkbox" id="root-document"><span>Root Document <span class="sub">Document root (PDF) — ada di template? / present in the template?</span></span></label>
+    <label class="toggle-row"><input type="checkbox" id="root-canvas"><span>Root Canvas <span class="sub">Canvas root (gambar/image) — ada di template? / present in the template?</span></span></label>
+    <p class="derived" id="multiroot-status">Multi-root: —</p>
+  </div>
+
+  <div class="card">
+    <h3>Check audit / Audit checks</h3>
+    <label class="toggle-row"><input type="checkbox" id="check-definetheme"><span>defineTheme <span class="sub">Tema ditulis sekali dengan defineTheme? / Theme written once with defineTheme?</span></span></label>
+    <label class="toggle-row"><input type="checkbox" id="check-validate"><span>Validate gate <span class="sub">validate() dipanggil sebelum render? / validate() called before rendering?</span></span></label>
+    <label class="toggle-row"><input type="checkbox" id="check-previews"><span>Bukti email-client / Email-client proof <span class="sub">Preview tiap klien email tersimpan? / One preview saved per email client?</span></span></label>
+    <label class="toggle-row"><input type="checkbox" id="check-tests"><span>Tests <span class="sub">Unit test untuk fungsi hitung? / Unit tests for the computed functions?</span></span></label>
+    <label class="toggle-row"><input type="checkbox" id="check-live"><span>Live preview <span class="sub">Preview ter-deploy dan bisa diklik? / Preview deployed and clickable?</span></span></label>
+  </div>
+
+  <div class="card">
+    <h3>Baris mapping yang belum dipetakan / Unmapped rows</h3>
+    <p>Balik baris ini ke “mapped” dan coverage + effort migrasi menghitung ulang. / Flip these rows to “mapped” and the coverage + migration effort recalculate.</p>
+    <div id="mapping-toggles"></div>
+  </div>
+
+  <div class="card">
+    <h3>Lintasan skor / Score trajectory</h3>
+    <p><label for="phase-slider" id="phase-slider-label">Lihat skor setelah fase 0 / See the score after phase 0</label></p>
+    <input type="range" id="phase-slider" min="0" max="4" step="1" value="0">
+    <div class="traj" id="trajectory"></div>
+  </div>
+
+  <div class="card">
+    <h3>Temuan / Findings</h3>
+    <ol id="findings-list"></ol>
+  </div>
+
+  <div class="card">
+    <h3>Fase roadmap / Roadmap phases</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Minggu / Week</th><th>Fase / Phase</th><th>Effort</th><th>Skor / Score</th></tr></thead>
+        <tbody id="phases-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    <p>Semua angka di halaman ini dihitung di browser oleh fungsi di <code>src/scoring.ts</code> dari data audit di <code>src/data.ts</code> / <code>src/second-audit.ts</code>. Tidak ada server, tidak ada jaringan — file ini bekerja offline. / Every number on this page is computed in the browser by the functions in <code>src/scoring.ts</code> from the audit data in <code>src/data.ts</code> / <code>src/second-audit.ts</code>. No server, no network — this file works offline.</p>
+  </footer>
+</main>
+<script>
+<!--DEMO_BUNDLE-->
+</script>
+</body>
+</html>

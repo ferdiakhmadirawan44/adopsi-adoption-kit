@@ -24,7 +24,7 @@
 // ---------------------------------------------------------------------------
 
 import { execSync } from "node:child_process";
-import { copyFile, mkdir, readdir, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, readdir, stat, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createElement } from "react";
@@ -42,12 +42,15 @@ import {
   auditFindings,
   auditLevel,
   auditMigrationEffort,
+  auditNumbers,
   auditPhaseEffort,
   auditScore,
   auditScoreAfterPhase,
   auditTotalEffort,
   defaultData,
+  validateData,
 } from "../src/data.ts";
+import { secondAuditData } from "../src/second-audit.ts";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = join(ROOT, "out");
@@ -124,6 +127,17 @@ async function main(): Promise<number> {
   if (!check.ok) failures.push("hyper-elements check reported errors");
   if (!render.ok) failures.push("hyper-elements render reported errors");
   if (!preview.ok) failures.push("hyper-elements preview reported errors");
+
+  // ---- 1b. Interactive demo build (regenerates examples/InteractiveDemo.html) ----
+  const demo = runCli("demo", "npx tsx scripts/build-demo.tsx");
+  report.demo = demo.summary;
+  if (!demo.ok) failures.push("demo build reported errors");
+  const demoStat = await stat(join(EXAMPLES, "InteractiveDemo.html")).catch(() => null);
+  if (!demoStat || demoStat.size === 0) {
+    failures.push("examples/InteractiveDemo.html missing or empty after demo build");
+  } else {
+    console.log(`✓ demo file: examples/InteractiveDemo.html (${demoStat.size} bytes)`);
+  }
 
   // ---- 2. In-process validate() ----
   const plugin = await emailClients({ clients: [...CLIENTS] });
@@ -243,6 +257,47 @@ async function main(): Promise<number> {
     migrationEffortHours: auditMigrationEffort(data),
     totalEffortHours: auditTotalEffort(data),
     trajectory,
+  };
+
+  // ---- 3b. Second audit (TAGIHAN) — same engine, second template ----
+  const second = secondAuditData;
+  let secondValid = true;
+  try {
+    validateData(second);
+  } catch {
+    secondValid = false;
+  }
+  inv("second-audit-validates", secondValid, "second audit record validates");
+  inv("second-score-40", auditScore(second) === 40, `score ${auditScore(second)}`);
+  inv(
+    "second-level-berkembang",
+    auditLevel(second).id === "Berkembang",
+    `level ${auditLevel(second).id} / ${auditLevel(second).en}`,
+  );
+  inv(
+    "second-trajectory-ends-at-100",
+    auditScoreAfterPhase(second, second.phases.length) === 100,
+    [0, 1, 2, 3, 4].map((n) => auditScoreAfterPhase(second, n)).join(" -> "),
+  );
+  inv(
+    "second-total-effort-24h",
+    auditTotalEffort(second) === 24,
+    `${auditTotalEffort(second)}h = ${[1, 2, 3, 4].map((n) => auditPhaseEffort(second, n)).join(" + ")}h`,
+  );
+  inv(
+    "second-missing-roots-0",
+    auditNumbers(second).missingRoots === 0 && auditNumbers(second).emailRoots === 2,
+    `missingRoots ${auditNumbers(second).missingRoots}, emailRoots ${auditNumbers(second).emailRoots}`,
+  );
+  report.secondAudit = {
+    project: second.audit.project,
+    score: auditScore(second),
+    level: auditLevel(second),
+    findings: auditFindings(second).length,
+    coverage: auditCoverage(second),
+    migrationEffortHours: auditMigrationEffort(second),
+    totalEffortHours: auditTotalEffort(second),
+    trajectory: [0, 1, 2, 3, 4].map((n) => auditScoreAfterPhase(second, n)),
   };
   report.invariants = invariants;
 

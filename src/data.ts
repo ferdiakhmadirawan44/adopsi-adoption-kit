@@ -176,8 +176,17 @@ export interface AuditData {
 /** The numbers the phase-effort formulas read — all from the audit. */
 export function auditNumbers(data: AuditData): AuditNumbers {
   const roots = data.measured.roots;
+  // Missing roots counts missing root KINDS, not 4 minus the root count:
+  // a template can hold two Email roots (TAGIHAN does) and 4 - 5 = -1
+  // would make a phase effort negative. One kind present counts once,
+  // however many roots of that kind the template holds.
+  const missingRoots =
+    (roots.email > 0 ? 0 : 1) +
+    (roots.page > 0 ? 0 : 1) +
+    (roots.document > 0 ? 0 : 1) +
+    (roots.canvas > 0 ? 0 : 1);
   return {
-    missingRoots: 4 - (roots.email + roots.page + roots.document + roots.canvas),
+    missingRoots,
     emailRoots: roots.email,
     clients: 7,
     computedFunctions: 6,

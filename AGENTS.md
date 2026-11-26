@@ -66,7 +66,9 @@ story; this file is the law. **Do not violate these invariants — the gate
 - `Row` has no `margin` — wrap it in a `Column` with padding instead (see
   `ShareCard`).
 - `tsx --test tests/` fails with `ERR_UNSUPPORTED_DIR_IMPORT` — run the test
-  file explicitly: `tsx --test tests/scoring.test.ts`.
+  files explicitly: `tsx --test tests/scoring.test.ts tests/second-audit.test.ts tests/demo.test.ts` (31 tests).
+- `auditNumbers()` counts **missing root KINDS**, not 4 minus the root count: a template can hold two Email roots (TAGIHAN does) and 4 − 5 = −1 made a phase effort negative. One kind present counts once, however many roots of that kind exist. The Ledger's 3 stays 3; TAGIHAN's is 0. Found by the second audit, 26 Nov 2026.
+- The interactive demo (`demo/`) recomputes with the real engine but its variants exist **only in memory in the browser** — never a second on-disk data file (invariant 2: the 7 outputs still render from `src/data.ts`). Build it with `npm run demo` (`scripts/build-demo.tsx` bundles `demo/entry.ts` with esbuild and inlines it into `examples/InteractiveDemo.html`); the gate regenerates it. The demo's root toggles restore the audit's own count per kind (TAGIHAN: Email = 2) or add one root of a kind the audit lacks. Verify a demo change with `node scripts/verify-demo-bundle.mjs` (DOM-stub smoke test, 6 settings) — there is no headless browser on this machine, so the final visual check is opening the file in a real browser.
 - The Canvas cheat sheet overflows silently: after changing row sizes, render
   and look at the PNG — row 10 was clipped once before the spacing was
   tightened. Always visually check both Canvas outputs after layout edits.
@@ -80,14 +82,20 @@ story; this file is the law. **Do not violate these invariants — the gate
 npm run check     # hyper-elements check src
 npm run render    # hyper-elements render src --out out
 npm run preview   # both emails, 7 clients
-npm test          # 13 unit tests
-npm run gate      # check + render + preview + validate() + invariants + examples
+npm run demo      # build the interactive demo -> examples/InteractiveDemo.html
+npm test          # 31 unit tests (scoring + second audit + demo)
+npm run gate      # check + render + preview + demo + validate() + invariants + examples
 npm run typecheck # tsc --noEmit
 ```
 
 ## Live preview status
 
-`examples/RoadmapPage.html` is the static preview, ready to deploy. The
-Vercel CLI on this machine is **not authenticated** (`~/.vercel/auth.json`
-missing) — do not create an account or ask for credentials. Deploy from an
-authenticated machine; the file needs nothing else.
+`examples/InteractiveDemo.html` is the live preview candidate (the
+engine live in the browser, both audits as presets) and
+`examples/RoadmapPage.html` is the static preview, both ready to
+deploy. The Vercel CLI on this machine is **not authenticated**
+(`~/.vercel/auth.json` missing) — do not create an account or ask for
+credentials. Deploy from an authenticated machine; the files need
+nothing else. The preview is currently served from GitHub Pages at
+`ferdiakhmadirawan44.github.io/adopsi-adoption-kit/` — pushing to the
+repo updates it.

@@ -22,9 +22,10 @@
   "private": true,
   "scripts": {
     "check": "hyper-elements check src",
+    "demo": "tsx scripts/build-demo.tsx",
     "gate": "tsx scripts/gate.tsx",
     "render": "hyper-elements render src --out out",
-    "test": "tsx --test tests/scoring.test.ts",
+    "test": "tsx --test tests/scoring.test.ts tests/second-audit.test.ts tests/demo.test.ts",
     "typecheck": "tsc --noEmit",
     "preview": "hyper-elements preview src/AuditEmail.tsx src/OnboardingEmail.tsx --clients outlook,outlook-com,gmail,gmail-app,apple-mail,yahoo,aol --out out"
   },

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T00:52:21.929Z",
+  "generatedAt": "2026-11-26T13:56:17.210Z",
   "kit": "ADOPSI",
   "auditId": "AUDIT ADOPSI-2026-001",
   "clients": [
@@ -27,6 +27,11 @@
       "warnings": 0,
       "skipped": 0
     }
+  },
+  "demo": {
+    "errors": 0,
+    "warnings": 0,
+    "skipped": 0
   },
   "validate": {
     "AuditEmail": {
@@ -497,6 +502,33 @@
       100
     ]
   },
+  "secondAudit": {
+    "project": "TAGIHAN",
+    "score": 40,
+    "level": {
+      "id": "Berkembang",
+      "en": "Growing",
+      "min": 40,
+      "max": 69
+    },
+    "findings": 4,
+    "coverage": {
+      "mapped": 21,
+      "partial": 3,
+      "manual": 1,
+      "total": 25,
+      "pct": 84
+    },
+    "migrationEffortHours": 18,
+    "totalEffortHours": 24,
+    "trajectory": [
+      40,
+      55,
+      70,
+      85,
+      100
+    ]
+  },
   "invariants": [
     {
       "name": "score-is-sum-of-passed-weights",
@@ -557,6 +589,36 @@
       "name": "week1-has-5-days",
       "passed": true,
       "detail": "5 days"
+    },
+    {
+      "name": "second-audit-validates",
+      "passed": true,
+      "detail": "second audit record validates"
+    },
+    {
+      "name": "second-score-40",
+      "passed": true,
+      "detail": "score 40"
+    },
+    {
+      "name": "second-level-berkembang",
+      "passed": true,
+      "detail": "level Berkembang / Growing"
+    },
+    {
+      "name": "second-trajectory-ends-at-100",
+      "passed": true,
+      "detail": "40 -> 55 -> 70 -> 85 -> 100"
+    },
+    {
+      "name": "second-total-effort-24h",
+      "passed": true,
+      "detail": "24h = 4 + 7 + 9 + 4h"
+    },
+    {
+      "name": "second-missing-roots-0",
+      "passed": true,
+      "detail": "missingRoots 0, emailRoots 2"
     }
   ],
   "examples": {
